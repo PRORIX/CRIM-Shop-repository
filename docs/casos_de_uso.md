@@ -112,7 +112,59 @@
   | Flujo básico | Entrar a la app -> Seleccionar la opción |
   | Pre-condiciones |  |
   | Post-condiciones  | Se envía la solicitud  |
-  |  Requerimientos | Correo validado  |
+  |  Requerimientos |   |
+  |  Notas |  _Notas adicionales_ |
+  | Autor  | PRORIX |
+  |Fecha | 20.03.25 |
+
+  |  Caso de Uso	CU |  Iniciar chat de soporte  |
+  |---|---|
+  | Fuentes  | _Documento que sustenta el caso de uso_  |
+  | Actor  |  Soporte  |
+  | Descripción |  Recibir una solicitud de soporte para iniciar una conversación con el cliente  |
+  | Flujo básico | Entrar a la app -> Entrar a la lista de solicitudes recibidas -> Seleccionar la opción |
+  | Pre-condiciones |  |
+  | Post-condiciones  | Se acepta la solicitud  |
+  |  Requerimientos |  Debe existir la solicitud  |
+  |  Notas |  _Notas adicionales_ |
+  | Autor  | PRORIX |
+  |Fecha | 20.03.25 |
+
+  |  Caso de Uso	CU |  Gestionar pedido  |
+  |---|---|
+  | Fuentes  | _Documento que sustenta el caso de uso_  |
+  | Actor  |  Gestor  |
+  | Descripción |  Se gestiona un pedido de carrito que ha realizado un cliente  |
+  | Flujo básico | Entrar a la app -> Entrar a la lista de pedidos -> Gestionarlo |
+  | Pre-condiciones |  |
+  | Post-condiciones  | Se da el pedido por "en preparación"  |
+  |  Requerimientos |  Debe existir el pedido  |
+  |  Notas |  _Notas adicionales_ |
+  | Autor  | PRORIX |
+  |Fecha | 20.03.25 |
+
+  |  Caso de Uso	CU |  Validar compra / cobrar  |
+  |---|---|
+  | Fuentes  | _Documento que sustenta el caso de uso_  |
+  | Actor  |  SISTEMA DE PAGO  |
+  | Descripción |  El proceso que sigue el sistema de pago bancario para realizar el cobro de la compra   |
+  | Flujo básico |  |
+  | Pre-condiciones | El pedido debe haber sido confirmado  |
+  | Post-condiciones  |  Se realiza el cobro con éxito  |
+  |  Requerimientos |  Debe existir el pedido  |
+  |  Notas |  _Notas adicionales_ |
+  | Autor  | PRORIX |
+  |Fecha | 20.03.25 |
+
+  |  Caso de Uso	CU |  Administrar productos  |
+  |---|---|
+  | Fuentes  | _Documento que sustenta el caso de uso_  |
+  | Actor  |  Administrador  |
+  | Descripción |  Gestion completa sobre los productos de la tienda (Añadir, Eliminar o modificar productos) |
+  | Flujo básico | Entrar a la app -> Realizar los cambios deseados |
+  | Pre-condiciones |  |
+  | Post-condiciones  |   |
+  |  Requerimientos |    |
   |  Notas |  _Notas adicionales_ |
   | Autor  | PRORIX |
   |Fecha | 20.03.25 |
