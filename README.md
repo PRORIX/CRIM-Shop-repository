@@ -17,10 +17,6 @@ Nos esforzaremos por brindarte la mejor experiencia de compra, con productos de 
 
 Los usuarios son los actores comunes que usan la APP, no tienen permisos especiales y pueden realizar compras, para lo que necesitarán tener una cuenta creada.
 
-### Soporte
-
-Los trabajadores de soporte se encargan de la atención al cliente, tienen acceso limitado a la sección de "chat con un operador", visualizar esos mensajes y responderlos. También se encargan de responder llamadas telefónicas de los clientes.
-
 ### Gestor
 
 Los gestores son trabajadores de la tienda online con permisos limitados, serán los encargados de gestionar los pedidos, para hacer el envío se necesita preparar el paquete, por lo que necesitamos Gestores, ellos tendrán acceso a los pedidos y gestionarlos.
