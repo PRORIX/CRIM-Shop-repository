@@ -1,5 +1,4 @@
-package es.ies.puerto;
-
+package es.prorix.crimshop;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +10,7 @@ public class PrincipalApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 620, 440);
+        Scene scene = new Scene(fxmlLoader.load(), 440, 600);
         stage.setTitle("Pantalla Login");
         stage.setScene(scene);
         stage.show();

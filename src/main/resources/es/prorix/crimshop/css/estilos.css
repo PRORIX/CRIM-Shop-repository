@@ -1,0 +1,38 @@
+#found{
+    -fx-background-color: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    -fx-padding: 40px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+#title{
+    -fx-font-size: 26px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#textField{
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: white;
+}
+
+#button{
+    -fx-background-color: #ff6b6b;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+#button:hover{
+    -fx-background-color: #DA5D5D;
+}
+
+#link{
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
