@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -9,9 +10,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="found" alignment="CENTER" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
+<VBox id="found" alignment="CENTER" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
+   <ComboBox fx:id="comboBox" id="comboBox" prefWidth="180.0" promptText="Idioma" />
 
-    <Label id="title" stylesheets="@css/estilos.css" text="Bienvenido a CRIM Shop" />
+    <Label fx:id="title" stylesheets="@css/estilos.css" text="Bienvenido a CRIM Shop" />
    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@imagenes/logotipo.png" />

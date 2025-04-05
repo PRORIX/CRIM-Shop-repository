@@ -1,17 +1,17 @@
-#found{
+#found {
     -fx-background-color: linear-gradient(to bottom, #ff9a9e, #fad0c4);
     -fx-padding: 40px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
 }
 
-#title{
+#title {
     -fx-font-size: 26px;
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
 
-#textField{
+#textField {
     -fx-font-size: 14px;
     -fx-padding: 10px;
     -fx-border-radius: 10px;
@@ -19,7 +19,7 @@
     -fx-background-color: white;
 }
 
-#button{
+#button {
     -fx-background-color: #ff6b6b;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -28,11 +28,59 @@
     -fx-background-radius: 10px;
 }
 
-#button:hover{
+#button:hover {
     -fx-background-color: #DA5D5D;
 }
 
-#link{
+#link {
     -fx-text-fill: white;
     -fx-font-size: 14px;
+}
+
+/* 🎨 COMBOBOX BONITO */
+#comboBox {
+    -fx-background-color: white;
+    -fx-border-color: #a855f7;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #4b0082;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-pref-height: 36px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 6, 0.3, 0, 2);
+}
+
+#comboBox:focused {
+    -fx-border-color: #c084fc;
+    -fx-effect: dropshadow(gaussian, rgba(192,132,252,0.4), 8, 0.3, 0, 2);
+}
+
+/* Flechita bonita */
+#comboBox .arrow-button {
+    -fx-background-color: transparent;
+}
+
+#comboBox .arrow-button .arrow {
+    -fx-shape: "M0,0 L5,5 L10,0 Z";
+    -fx-background-color: #a855f7;
+    -fx-scale-x: 1.4;
+    -fx-scale-y: 1.4;
+}
+
+/* Lista desplegable */
+#comboBox .list-cell {
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-background-color: white;
+}
+
+#comboBox .list-cell:hover {
+    -fx-background-color: #f3e8ff;
+}
+
+#comboBox .list-cell:selected {
+    -fx-background-color: #e9d5ff;
+    -fx-text-fill: #4b0082;
 }
