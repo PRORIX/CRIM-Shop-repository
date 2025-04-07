@@ -9,6 +9,7 @@ module es.prorix.crimshop{
     opens es.prorix.crimshop to javafx.fxml;
     exports es.prorix.crimshop;
     exports es.prorix.crimshop.backend.controller;
+    exports es.prorix.crimshop.backend.controller.abstractas;
 
     opens es.prorix.crimshop.backend.controller to javafx.fxml;
 }

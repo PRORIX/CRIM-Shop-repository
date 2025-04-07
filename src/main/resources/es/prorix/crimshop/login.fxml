@@ -10,10 +10,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="found" alignment="CENTER" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
-   <ComboBox fx:id="comboBox" id="comboBox" prefWidth="180.0" promptText="Idioma" />
+<VBox id="found" alignment="CENTER" prefHeight="656.0" prefWidth="497.0" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
+   <ComboBox id="comboBox" fx:id="comboBox" prefWidth="180.0" promptText="Idioma" />
 
-    <Label fx:id="title" stylesheets="@css/estilos.css" text="Bienvenido a CRIM Shop" />
+    <Label fx:id="title" alignment="CENTER" prefHeight="99.0" prefWidth="572.0" stylesheets="@css/estilos.css" text="Bienvenido a CRIM Shop" textAlignment="CENTER" />
    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@imagenes/logotipo.png" />
