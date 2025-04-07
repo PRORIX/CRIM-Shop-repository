@@ -25,7 +25,7 @@
     <PasswordField id="textField" fx:id="passwordField" maxWidth="280" promptText="Contraseña" />
     
     <Button id="button" fx:id="loginButton" maxWidth="280" text="Iniciar Sesión" />
-   <Button id="button" fx:id="registerButton" maxWidth="280" text="Crear cuenta nueva" />
+   <Button id="button" fx:id="openRegisterButton" maxWidth="280" onAction="#openRegisterButtonClick" text="Crear cuenta nueva" />
     
     <Hyperlink id="link" fx:id="forgotPasswordLink" text="¿Olvidaste tu contraseña?" />
 </VBox>

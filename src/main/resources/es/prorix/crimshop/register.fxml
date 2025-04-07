@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="found" alignment="CENTER" prefHeight="700.0" prefWidth="500.0" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.RegisterController">
+    
+    
+    <Label id="title" fx:id="titleRegister" alignment="CENTER" prefHeight="99.0" prefWidth="572.0" stylesheets="@css/estilos.css" text="Crea tu cuenta" textAlignment="CENTER" />
+    
+    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@imagenes/logotipo.png" />
+        </image>
+    </ImageView>
+    
+    <TextField id="textField" fx:id="usernameField" maxWidth="280" promptText="Nombre de usuario" />
+    
+    <TextField id="textField" fx:id="emailField" maxWidth="280" promptText="Correo electrónico" />
+    
+    <PasswordField id="textField" fx:id="passwordField" maxWidth="280" promptText="Contraseña" />
+    
+    <PasswordField id="textField" fx:id="confirmPasswordField" maxWidth="280" promptText="Confirmar contraseña" />
+    
+    <Button id="button" fx:id="registerButton" maxWidth="280" text="Registrarse" />
+    
+    <Hyperlink id="link" fx:id="loginLink" text="¿Ya tienes cuenta? Inicia sesión aquí" />
+</VBox>
