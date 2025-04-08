@@ -29,3 +29,15 @@ Los administradores son los trabajadores de la tienda, y tienen todos los permis
 
 Pasarela de pago.
 
+
+## Tecnologías usadas
+
+- JAVAFX
+- SQLITE3
+- JAVA
+- CSS
+
+  ## Como ejecutar
+
+  Para ejecutar el proyecto escribiremos ``mvn javafx:run´´ en la terminal en la carpeta principal del proyecto.
+
