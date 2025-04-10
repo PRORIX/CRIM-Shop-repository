@@ -1,43 +1,126 @@
-# CRIM-Shop-repository
+# CRIM Shop – Tu estilo, nuestra pasión
 
-## Repositorio para almacenar la documentación propia del PROYECTO CRIM SHOP
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Versión](https://img.shields.io/badge/version-1.0-blue)
+![Licencia](https://img.shields.io/badge/license-MIT-lightgrey)
 
-### Bienvenidos a CRIM Shop – donde la pasión y la calidad se encuentran.
+Bienvenidos al repositorio oficial de **CRIM Shop**, la tienda online desarrollada con mimo y esfuerzo por dos personas que comparten una visión: ofrecer productos únicos con atención al detalle y una experiencia de compra inigualable.
 
-En CRIM Shop, creemos que cada compra debe ser especial. Nuestra tienda nacerá del esfuerzo y la ilusión de dos personas que buscan ofrecer productos únicos y cuidadosamente seleccionados. Aquí encontrarás ropa con un toque personal y atención al detalle.
+---
 
-Nos esforzaremos por brindarte la mejor experiencia de compra, con productos de calidad y un servicio cercano. Porque en CRIM Shop, cada cliente es parte de nuestra historia.
+## ¿Qué es CRIM Shop?
 
-¡Descubre lo que tenemos para ti y forma parte de nuestra comunidad!
+**CRIM Shop** es una aplicación de tienda online que permite a los usuarios descubrir y adquirir ropa seleccionada con un enfoque personal y de calidad. Nuestra misión es transformar cada compra en una experiencia especial, gracias a un diseño atractivo, procesos optimizados y una atención cercana al cliente.
 
+Este proyecto está pensado para todas aquellas personas que buscan ropa única y quieren sentirse parte de una comunidad. Además, la app ofrece un sistema de gestión para que los trabajadores puedan administrar pedidos, productos y devoluciones de forma eficiente.
 
-## Información sobre los actores de la APP
+Lo que hace especial a CRIM Shop es su enfoque **humano y personal** tanto en lo visual como en la experiencia del usuario. Cada cliente es parte de nuestra historia, y cada detalle está diseñado con ese valor en mente.
 
-### Usuario
+---
 
-Los usuarios son los actores comunes que usan la APP, no tienen permisos especiales y pueden realizar compras, para lo que necesitarán tener una cuenta creada.
+## Diseño
 
-### Gestor
+### Prototipo inicial (Figma)
 
-Los gestores son trabajadores de la tienda online con permisos limitados, serán los encargados de gestionar los pedidos, para hacer el envío se necesita preparar el paquete, por lo que necesitamos Gestores, ellos tendrán acceso a los pedidos y gestionarlos.
+![Prototipo Inicial](docs/images/prototipo-inicial.png)  
+*Primer wireframe en Figma, centrado en la navegación básica y estructura general.*
 
-### Administrador
+### Diseño implementado
 
-Los administradores son los trabajadores de la tienda, y tienen todos los permisos especiales de trabajador de la tienda, tendrán una cuenta ADMIN, con la que podrán hacer todo tipo de funciones como gestionar pedidos, añadir productos a la tienda, eliminarlos, modificarlos, hacer reembolsos si fuera preciso, etc.
+![Diseño Final](docs/images/diseno-final.png)  
+*Diseño final con colores corporativos, tipografía definida y funciones completas integradas.*
 
-### Sistema de pago
+> **Cambios clave:** El diseño final incorpora mejoras visuales, integración de módulos de gestión, una mejor experiencia de usuario y adaptación responsive.
 
-Pasarela de pago.
-
+---
 
 ## Tecnologías usadas
 
-- JAVAFX
-- SQLITE3
-- JAVA
+- Java
+- JavaFX
+- SQLite3
 - CSS
+- Maven
 
-  ## Como ejecutar
+---
 
-  Para ejecutar el proyecto escribiremos ``mvn javafx:run´´ en la terminal en la carpeta principal del proyecto.
+## Instrucciones de instalación
 
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/CRIM-Shop-repository.git
+   ```
+
+2. Accede a la carpeta del proyecto:
+   ```bash
+   cd CRIM-Shop-repository
+   ```
+
+3. Ejecuta la aplicación con Maven:
+   ```bash
+   mvn javafx:run
+   ```
+
+> Asegúrate de tener Java y Maven correctamente instalados en tu sistema.
+
+---
+
+## Roles y actores en la aplicación
+
+### Usuario
+
+Los usuarios son los actores comunes que usan la APP. No tienen permisos especiales y pueden realizar compras, para lo cual necesitarán tener una cuenta creada.
+
+### Gestor
+
+Los gestores son trabajadores de la tienda online con permisos limitados. Son los encargados de preparar y gestionar los pedidos para su envío. Tienen acceso exclusivo a la sección de gestión de pedidos.
+
+### Administrador
+
+Los administradores son trabajadores con permisos completos. Cuentan con una cuenta tipo ADMIN que les permite gestionar productos, pedidos, reembolsos, usuarios, inventario y más.
+
+### Sistema de pago
+
+Pasarela de pago integrada para facilitar las compras de los usuarios con total seguridad.
+
+---
+
+## Tabla de características
+
+| Funcionalidad                  | Estado |
+|-------------------------------|--------|
+| Registro/Login                | ✅     |
+| Visualización de productos    | ✅     |
+| Carrito de compras            | ✅     |
+| Gestión de pedidos            | ✅     |
+| Gestión de inventario (Admin) | ✅     |
+| Reembolsos                    | ✅     |
+| Pasarela de pago              | ✅     |
+
+---
+
+## Roadmap – Próximas mejoras
+
+- [ ] Integración con redes sociales
+- [ ] Notificaciones por email para pedidos
+- [ ] Sistema de valoraciones y reseñas
+- [ ] Diseño responsive para móviles
+- [ ] Dark mode
+
+---
+
+## Demo
+
+[Ver demo en YouTube](https://www.youtube.com/tu-demo)  
+*O añade un GIF mostrando la app en acción aquí.*
+
+---
+
+## Contribuciones
+
+¿Te gustaría aportar al proyecto? ¡Estaremos encantados de recibir sugerencias, feedback o pull requests!  
+Puedes abrir un *Issue* o enviar directamente una *Pull Request*.
+
+---
+
+**CRIM Shop** – Hecho con ilusión y código por personas reales.
