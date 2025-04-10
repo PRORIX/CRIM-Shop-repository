@@ -30,7 +30,6 @@ Lo que hace especial a CRIM Shop es su enfoque **humano y personal** tanto en lo
 ![Diseño Final](docs/images/diseno-final.png)  
 *Diseño final con colores corporativos, tipografía definida y funciones completas integradas.*
 
-> **Cambios clave:** El diseño final incorpora mejoras visuales, integración de módulos de gestión, una mejor experiencia de usuario y adaptación responsive.
 
 ---
 
@@ -90,29 +89,26 @@ Pasarela de pago integrada para facilitar las compras de los usuarios con total 
 | Funcionalidad                  | Estado |
 |-------------------------------|--------|
 | Registro/Login                | ✅     |
-| Visualización de productos    | ✅     |
-| Carrito de compras            | ✅     |
-| Gestión de pedidos            | ✅     |
-| Gestión de inventario (Admin) | ✅     |
-| Reembolsos                    | ✅     |
-| Pasarela de pago              | ✅     |
+| Visualización de productos    | ❌     |
+| Carrito de compras            | ❌     |
+| Gestión de pedidos            | ❌     |
+| Gestión de inventario (Admin) | ❌     |
+| Reembolsos                    | ❌     |
+| Pasarela de pago              | ❌     |
 
 ---
 
 ## Roadmap – Próximas mejoras
 
-- [ ] Integración con redes sociales
 - [ ] Notificaciones por email para pedidos
 - [ ] Sistema de valoraciones y reseñas
-- [ ] Diseño responsive para móviles
 - [ ] Dark mode
 
 ---
 
 ## Demo
 
-[Ver demo en YouTube](https://www.youtube.com/tu-demo)  
-*O añade un GIF mostrando la app en acción aquí.*
+[Ver demo ]()  
 
 ---
 
