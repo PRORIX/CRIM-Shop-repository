@@ -47,7 +47,7 @@ Lo que hace especial a CRIM Shop es su enfoque **humano y personal** tanto en lo
 
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/PRORIX/CRIM-Shop-repository.git
+   git clone https://github.com/PRORIX/CRIM-Shop-repository
    ```
 
 2. Accede a la carpeta del proyecto:
