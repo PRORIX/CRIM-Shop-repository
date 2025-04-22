@@ -8,7 +8,6 @@ import java.util.Objects;
  */
 public class UsuarioModel {
     
-    private String nombre;
     private String nombreUsuario;
     private String contrasenia;
     private String email;
@@ -36,8 +35,7 @@ public class UsuarioModel {
      * @param contrasenia del usuario
      * @param email del usuario
      */
-    public UsuarioModel(String nombre, String nombreUsuario, String contrasenia, String email) {
-        this.nombre = nombre;
+    public UsuarioModel(String nombreUsuario, String contrasenia, String email) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
         this.email = email;
@@ -45,13 +43,7 @@ public class UsuarioModel {
 
     // Getters y setters
 
-    public String getNombre() {
-        return this.nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getNombreUsuario() {
         return this.nombreUsuario;
@@ -77,10 +69,6 @@ public class UsuarioModel {
         this.email = email;
     }
 
-    public UsuarioModel nombre(String nombre) {
-        setNombre(nombre);
-        return this;
-    }
 
     public UsuarioModel nombreUsuario(String nombreUsuario) {
         setNombreUsuario(nombreUsuario);
@@ -122,7 +110,7 @@ public class UsuarioModel {
 
     @Override
     public String toString() {
-        return getNombre() + "," + getNombreUsuario() + "," + getContrasenia() + "," + getEmail();
+        return getNombreUsuario() + "," + getContrasenia() + "," + getEmail();
     }
     
 }

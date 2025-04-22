@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <VBox id="found" alignment="CENTER" prefHeight="700.0" prefWidth="500.0" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.RegisterController">
     
@@ -28,7 +29,8 @@
     
     <PasswordField id="textField" fx:id="confirmPasswordField" maxWidth="280" promptText="Confirmar contraseña" />
     
-    <Button id="button" fx:id="registerButton" maxWidth="280" text="Registrarse" />
+    <Button id="button" fx:id="registerButton" maxWidth="280" onAction="#registerButtonClick" text="Registrarse" />
     
-    <Hyperlink id="link" fx:id="loginLink" text="¿Ya tienes cuenta? Inicia sesión aquí" />
+    <Hyperlink id="link" fx:id="loginLink" onAction="#loginLinkClick" text="¿Ya tienes cuenta? Inicia sesión aquí" />
+   <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" />
 </VBox>

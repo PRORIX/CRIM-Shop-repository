@@ -5,8 +5,6 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import es.prorix.crimshop.PrincipalApplication;
-import es.prorix.crimshop.backend.controller.abstractas.AbstractController;
-import es.prorix.crimshop.backend.controller.abstractas.IdiomaAbstractController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,8 +17,57 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LoginController extends IdiomaAbstractController implements Initializable {
+public class LoginController implements Initializable {
 
+    @FXML
+    public ComboBox<String> comboBox;
+    @FXML
+    public Label title;
+    @FXML
+    public TextField usernameField;
+    @FXML
+    public PasswordField passwordField;
+    @FXML
+    public Button loginButton;
+    @FXML
+    public Button openRegisterButton;
+    @FXML
+    public Hyperlink forgotPasswordLink;
+
+    String selected;
+
+    public ResourceBundle currentBundle;
+
+
+
+    public void cambioIdioma() {
+        comboBox.getItems().addAll("Español", "English", "Français");
+        comboBox.setValue("Español");
+        loadLanguage("es");
+
+        comboBox.setOnAction(e -> {
+            selected = comboBox.getValue();
+            if (selected.equals("English")) {
+                loadLanguage("en");
+            } else if (selected.equals("Français")) {
+                loadLanguage("fr");
+            } else {
+                loadLanguage("es");
+            }
+        });
+    }
+
+    public void loadLanguage(String langCode) {
+        Locale locale = new Locale(langCode);
+        currentBundle = ResourceBundle.getBundle("lang.messages", locale);
+        
+        title.setText(currentBundle.getString("textTitulo"));
+        usernameField.setPromptText(currentBundle.getString("promptTextTextFieldUsuario"));
+        passwordField.setPromptText(currentBundle.getString("promptTextTextFieldContrasenia"));
+        loginButton.setText(currentBundle.getString("textButtonIniciarSesion"));
+        openRegisterButton.setText(currentBundle.getString("textButtonCrearCuentaNueva"));
+        forgotPasswordLink.setText(currentBundle.getString("textHyperLinkOlvidasteTuContra"));
+    }
     
 
     @Override
