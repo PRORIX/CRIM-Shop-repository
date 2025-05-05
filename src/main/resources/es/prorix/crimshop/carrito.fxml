@@ -1,6 +1,6 @@
-<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="es.prorix.crimshop.backend.controller.CarritoController">
-    <ListView fx:id="listaCarrito" prefHeight="150"/>
-    <Label fx:id="lblTotal"/>
-    <Button text="Pagar" onAction="#pagar"/>
-</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />

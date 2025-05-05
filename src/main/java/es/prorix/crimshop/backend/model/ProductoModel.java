@@ -26,5 +26,22 @@ public class ProductoModel {
     public String getImagen() { return imagen; }
     public int getStock() { return stock; }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+
     public void setStock(int stock) { this.stock = stock; }
 }

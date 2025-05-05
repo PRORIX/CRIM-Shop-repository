@@ -84,7 +84,7 @@ public class LoginController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/prorix/crimshop/productos.fxml"));
                 Parent root = loader.load();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root, 500, 600));
+                stage.setScene(new Scene(root, 500, 590));
                 stage.show();
             } else {
                 mensajeLabel.setText("❌ Usuario o contraseña incorrectos.");
