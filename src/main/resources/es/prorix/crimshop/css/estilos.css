@@ -49,4 +49,78 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 6, 0.3, 0, 2);
 }
 
+/* Estilos generales para los productos */
+.producto {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 6, 0.3, 0, 2);
+}
+
+.producto .label-titulo {
+    -fx-font-weight: bold;
+}
+
+.producto .label-precio {
+    -fx-font-size: 14px;
+}
+
+/* Puedes añadir más clases para personalizar otros elementos */
+
+/* ===== ESTILOS PERSONALIZADOS PARA perfil.fxml ===== */
+
+/* Contenedor principal del perfil */
+.perfil-root {
+    -fx-background-color: linear-gradient(to bottom, #ffe1e1, #ffffff);
+    -fx-padding: 40px;
+    -fx-spacing: 30px;
+    -fx-alignment: center;
+}
+
+/* Título del perfil */
+.perfil-titulo {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.4, 2, 2);
+}
+
+/* Imagen de perfil */
+.perfil-imagen {
+    -fx-border-color: #bbbbbb;
+    -fx-border-width: 2;
+    -fx-border-radius: 75;
+    -fx-background-radius: 75;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0.5, 0, 2);
+}
+
+/* Etiquetas clave (nombre, correo, etc.) */
+.perfil-label-clave {
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: #444444;
+}
+
+/* Etiquetas de valores */
+.perfil-label-valor {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+}
+
+/* Caja de compras */
+.perfil-compras {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 6, 0.3, 0, 2);
+}
+
+/* Etiquetas dentro de compras */
+.perfil-compras Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #444444;
+}
+
 

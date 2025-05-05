@@ -1,19 +1,24 @@
 package es.prorix.crimshop.backend.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
+import es.prorix.crimshop.PrincipalApplication;
 import es.prorix.crimshop.database.ConexionBD;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class RegisterController implements Initializable {
 
@@ -71,7 +76,7 @@ public class RegisterController implements Initializable {
                 textMensaje.setText("❌ Ya existe un usuario con ese correo.");
             } else {
                 // Insertar nuevo usuario
-                String insertar = "INSERT INTO usuarios(nombre, email, contrasena) VALUES (?, ?, ?)";
+                String insertar = "INSERT INTO usuarios(nombreUsuario, email, contrasenia) VALUES (?, ?, ?)";
                 PreparedStatement insertStmt = conn.prepareStatement(insertar);
                 insertStmt.setString(1, nombre);
                 insertStmt.setString(2, email);
@@ -87,6 +92,9 @@ public class RegisterController implements Initializable {
             }
         } catch (Exception e) {
             textMensaje.setText("Error con la base de datos: " + e.getMessage());
+        }finally{
+            System.out.println("Conexion con la bbdd cerrada");
+            ConexionBD.cerrarConexion();
         }
 
         
@@ -101,7 +109,19 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    public void loginLinkClick(){}
+    public void loginLinkClick(){
+            try {
+            Stage stage = (Stage) loginLink.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 330, 500);
+            stage.setTitle("registro");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    }
 
 
-}
+

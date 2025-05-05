@@ -1,0 +1,6 @@
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="es.prorix.crimshop.backend.controller.PagoController">
+    <TextField fx:id="txtTarjeta" promptText="Introduce tu tarjeta"/>
+    <Button text="Realizar pago" onAction="#realizarPago"/>
+    <Label fx:id="lblResultado"/>
+</VBox>

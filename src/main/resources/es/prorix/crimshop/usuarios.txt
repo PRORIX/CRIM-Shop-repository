@@ -1,0 +1,3 @@
+admin;admin123;ADMIN
+gestor;gestor123;GESTOR
+user;user123;USER

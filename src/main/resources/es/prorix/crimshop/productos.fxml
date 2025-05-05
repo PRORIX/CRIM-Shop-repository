@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="pantallaPrincipal" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #242424; -fx-padding: 10;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="🛒 CRIM Shop" />
+            <Button mnemonicParsing="false" stylesheets="@css/estilos.css" text="Carrito" />
+            <Button mnemonicParsing="false" stylesheets="@css/estilos.css" text="Perfil" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-padding: 10;">
+            <VBox prefHeight="1502.0" prefWidth="472.0" spacing="20" style="-fx-padding: 20;">
+                <!-- Producto 1 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Sudadera Oficial CRIM" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto1/Captura%20de%20pantalla%202025-05-05%20110842.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label prefHeight="53.0" prefWidth="107.0" styleClass="label-precio" text="24,99€" />
+                </VBox>
+
+                <!-- Producto 2 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Gorra Negra CRIM OF" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto2/Captura%20de%20pantalla%202025-05-05%20111608.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label styleClass="label-precio" text="9,99€" />
+                </VBox>
+
+                <!-- Producto 3 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Suéter Dragón CRIM" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto3/Captura%20de%20pantalla%202025-05-05%20111947.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label styleClass="label-precio" text="Precio: 19.99€" />
+                </VBox>
+
+                <!-- Producto 4 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Camiseta MSQMA" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto4/Captura%20de%20pantalla%202025-05-05%20112247.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label styleClass="label-precio" text="15,99€" />
+                </VBox>
+
+                <!-- Producto 5 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Camiseta ro-BOT ardiendo" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto5/Captura%20de%20pantalla%202025-05-05%20112816.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label styleClass="label-precio" text="19,99€" />
+                </VBox>
+
+                <!-- Producto 6 -->
+                <VBox spacing="10" styleClass="producto">
+                    <Label styleClass="label-titulo" text="Sudadera BASIC" />
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/producto6/Captura%20de%20pantalla%202025-05-05%20112858.png" />
+                        </image>
+                    </ImageView>
+                    <Button mnemonicParsing="false" text="Ver producto" />
+                    <Label styleClass="label-precio" text="24,99€" />
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

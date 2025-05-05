@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="found" alignment="CENTER" prefHeight="656.0" prefWidth="497.0" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
+<VBox id="found" alignment="CENTER" prefHeight="656.0" prefWidth="497.0" spacing="15" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.LoginController">
    <ComboBox id="comboBox" fx:id="comboBox" prefWidth="180.0" promptText="Idioma" />
 
     <Label fx:id="title" alignment="CENTER" prefHeight="99.0" prefWidth="572.0" stylesheets="@css/estilos.css" text="Bienvenido a CRIM Shop" textAlignment="CENTER" />
@@ -24,8 +24,9 @@
     
     <PasswordField id="textField" fx:id="passwordField" maxWidth="280" promptText="Contraseña" />
     
-    <Button id="button" fx:id="loginButton" maxWidth="280" text="Iniciar Sesión" />
+    <Button id="button" fx:id="loginButton" maxWidth="280" onAction="#loginButtonClick" text="Iniciar Sesión" />
    <Button id="button" fx:id="openRegisterButton" maxWidth="280" onAction="#openRegisterButtonClick" text="Crear cuenta nueva" />
+   <Label fx:id="mensajeLabel" text="Label" />
     
-    <Hyperlink id="link" fx:id="forgotPasswordLink" text="¿Olvidaste tu contraseña?" />
+    <Hyperlink id="link" fx:id="forgotPasswordLink" onAction="#forgotPasswordLinkClick" text="¿Olvidaste tu contraseña?" />
 </VBox>
