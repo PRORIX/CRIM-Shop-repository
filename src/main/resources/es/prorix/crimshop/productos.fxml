@@ -9,12 +9,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="pantallaPrincipal" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.ProductosController">
+<BorderPane fx:id="pantallaPrincipal" stylesheets="@css/estilos.css" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.ProductosController">
     <top>
         <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #242424; -fx-padding: 10;">
             <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="🛒 CRIM Shop" />
-            <Button mnemonicParsing="false" stylesheets="@css/estilos.css" text="Carrito" />
-            <Button mnemonicParsing="false" stylesheets="@css/estilos.css" text="Perfil" />
+            <Button fx:id="verCarrito" mnemonicParsing="false" onAction="#verCarritoClick" stylesheets="@css/estilos.css" text="Carrito" />
+            <Button fx:id="perfilButton" mnemonicParsing="false" onAction="#perfilButtonClick" stylesheets="@css/estilos.css" text="Perfil" />
+         <Button fx:id="cerrarButton" mnemonicParsing="false" onAction="#cerrarButtonClick" text="Cerrar Sesión" />
         </HBox>
     </top>
    <bottom>
@@ -25,7 +26,7 @@
                     <Label styleClass="label-titulo" text="Sudadera Oficial CRIM" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto1/Captura%20de%20pantalla%202025-05-05%20110842.png" />
+                            <Image url="@imagenes/productos/sudadera.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verOficial" mnemonicParsing="false" onAction="#verOficialClick" text="Ver producto" />
@@ -37,7 +38,7 @@
                     <Label styleClass="label-titulo" text="Gorra Negra CRIM OF" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto2/Captura%20de%20pantalla%202025-05-05%20111608.png" />
+                            <Image url="@imagenes/productos/gorra.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verGorra" mnemonicParsing="false" onAction="#verGorraClick" text="Ver producto" />
@@ -49,7 +50,7 @@
                     <Label styleClass="label-titulo" text="Suéter Dragón CRIM" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto3/Captura%20de%20pantalla%202025-05-05%20111947.png" />
+                            <Image url="@imagenes/productos/sueter.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verDragon" mnemonicParsing="false" onAction="#verDragonClick" text="Ver producto" />
@@ -61,7 +62,7 @@
                     <Label styleClass="label-titulo" text="Camiseta MSQMA" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto4/Captura%20de%20pantalla%202025-05-05%20112247.png" />
+                            <Image url="@imagenes/productos/camiseta_msqma.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verSolo" mnemonicParsing="false" onAction="#verSoloClick" text="Ver producto" />
@@ -73,7 +74,7 @@
                     <Label styleClass="label-titulo" text="Camiseta ro-BOT ardiendo" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto5/Captura%20de%20pantalla%202025-05-05%20112816.png" />
+                            <Image url="@imagenes/productos/camiseta_robot.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verRobot" mnemonicParsing="false" onAction="#verRobotClick" text="Ver producto" />
@@ -85,7 +86,7 @@
                     <Label styleClass="label-titulo" text="Sudadera BASIC" />
                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@imagenes/producto6/Captura%20de%20pantalla%202025-05-05%20112858.png" />
+                            <Image url="@imagenes/productos/sudadera_basic.png" />
                         </image>
                     </ImageView>
                     <Button fx:id="verBasic" mnemonicParsing="false" onAction="#verBasicClick" text="Ver producto" />

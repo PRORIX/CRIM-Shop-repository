@@ -1,7 +1,6 @@
 package es.prorix.crimshop.backend.controller;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -30,6 +29,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Clase controladora de la pantalla de login
+ * 
+ * @author prorix
+ * @veresultSetion 1.0.0
+ */
 public class LoginController implements Initializable {
 
     @FXML
@@ -53,16 +58,18 @@ public class LoginController implements Initializable {
 
     public ResourceBundle currentBundle;
 
-
-
-
+    /**
+     * Metodo del boton de iniciar sesion
+     * 
+     * @param event evento
+     */
     @FXML
     private void loginButtonClick(ActionEvent event) {
         String user = usernameField.getText().trim();
         String contrasena = passwordField.getText();
 
         if (user.isEmpty() || contrasena.isEmpty()) {
-            mensajeLabel.setText("⚠️ Introduce el correo y la contraseña.");
+            mensajeLabel.setText("Introduce el correo y la contraseña.");
             return;
         }
 
@@ -70,34 +77,38 @@ public class LoginController implements Initializable {
 
         try {
             String consulta = "SELECT * FROM usuarios WHERE nombreUsuario = ? AND contrasenia = ?";
-            PreparedStatement stmt = conn.prepareStatement(consulta);
-            stmt.setString(1, user);
-            stmt.setString(2, contrasena);
-            ResultSet rs = stmt.executeQuery();
+            PreparedStatement preparedStatement = conn.prepareStatement(consulta);
+            preparedStatement.setString(1, user);
+            preparedStatement.setString(2, contrasena);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (rs.next()) {
+            if (resultSet.next()) {
 
-                UsuarioModel usuario = new UsuarioModel(user, contrasena, "");
+                String emailUsuario = resultSet.getString("email");
+
+                UsuarioModel usuario = new UsuarioModel(user, contrasena, emailUsuario);
                 UsuarioService.setUsuarioActual(usuario);
 
-                // Cambiar de pantalla al perfil
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/prorix/crimshop/productos.fxml"));
                 Parent root = loader.load();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root, 500, 590));
                 stage.show();
             } else {
-                mensajeLabel.setText("❌ Usuario o contraseña incorrectos.");
+                mensajeLabel.setText("Usuario o contraseña incorrectos.");
             }
         } catch (SQLException e) {
-            mensajeLabel.setText("❌ Error al conectar: " + e.getMessage());
+            mensajeLabel.setText("Error al conectar: " + e.getMessage());
         } catch (Exception e) {
-            mensajeLabel.setText("❌ Error al cargar perfil: " + e.getMessage());
+            mensajeLabel.setText("Error al cargar perfil: " + e.getMessage());
         } finally {
             ConexionBD.cerrarConexion();
         }
     }
 
+    /**
+     * Metodo de cambio de idioma
+     */
     public void cambioIdioma() {
         comboBox.getItems().addAll("Español", "English", "Français");
         comboBox.setValue("Español");
@@ -115,10 +126,15 @@ public class LoginController implements Initializable {
         });
     }
 
+    /**
+     * Metodo para cargar el idioma
+     * 
+     * @param langCode codigo de lengua
+     */
     public void loadLanguage(String langCode) {
         Locale locale = new Locale(langCode);
         currentBundle = ResourceBundle.getBundle("lang.messages", locale);
-        
+
         title.setText(currentBundle.getString("textTitulo"));
         usernameField.setPromptText(currentBundle.getString("promptTextTextFieldUsuario"));
         passwordField.setPromptText(currentBundle.getString("promptTextTextFieldContrasenia"));
@@ -127,8 +143,12 @@ public class LoginController implements Initializable {
         forgotPasswordLink.setText(currentBundle.getString("textHyperLinkOlvidasteTuContra"));
     }
 
-    
-
+    /**
+     * Metodo para cambiar la vista
+     * 
+     * @param fxml  destino
+     * @param boton boton que hizo la accion
+     */
     public void cambiarVista(String fxml, Button boton) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/prorix/crimshop/view/" + fxml));
@@ -139,51 +159,25 @@ public class LoginController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    
-    
 
+    /**
+     * Metodo inicializador
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cambioIdioma();
     }
 
-    public String[] autenticar(String user, String pass) {
-    try (BufferedReader br = new BufferedReader(new FileReader("usuarios.txt"))) {
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            String[] datos = linea.split(";");
-            if (datos[0].equals(user) && datos[1].equals(pass)) {
-                return datos; // [usuario, password, rol]
-            }
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return null;
-}
-
-@FXML
-protected void forgotPasswordLinkClick(){
-    try {
-        Stage stage = (Stage) openRegisterButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarContrasenia.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 330, 500);
-        stage.setTitle("registro");
-        stage.setScene(scene);
-        stage.show();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-}
-
+    /**
+     * Metodo del vinculo de olvidar la contrasenia
+     */
     @FXML
-    protected void openRegisterButtonClick() throws Exception{
-            try {
+    protected void forgotPasswordLinkClick() {
+        try {
             Stage stage = (Stage) openRegisterButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 330, 500);
-            stage.setTitle("registro");
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarContrasenia.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Recuperar contraseña");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -191,7 +185,22 @@ protected void forgotPasswordLinkClick(){
         }
     }
 
-    
+    /**
+     * Metodo del boton de abrir la pantalla de registro
+     * 
+     * @throws Exception
+     */
+    @FXML
+    protected void openRegisterButtonClick() throws Exception {
+        try {
+            Stage stage = (Stage) openRegisterButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("register.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("registro");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
-
-

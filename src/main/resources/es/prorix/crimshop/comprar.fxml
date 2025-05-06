@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.2" fx:controller="es.prorix.crimshop.backend.controller.ComprarController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="🛍️ Confirmar Compra" />
+
+    <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="350" prefWidth="480">
+        <VBox fx:id="contenedorProductos" spacing="10" />
+    </ScrollPane>
+
+    <HBox alignment="CENTER" spacing="15">
+        <Label fx:id="totalLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Total: 0.00€" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="15">
+        <Button fx:id="comprarButton" onAction="#comprarButtonClick" prefWidth="150" text="Realizar Compra" />
+        <Button fx:id="volverButton" onAction="#volverButtonClick" prefWidth="100" text="Volver" />
+    </HBox>
+</VBox>

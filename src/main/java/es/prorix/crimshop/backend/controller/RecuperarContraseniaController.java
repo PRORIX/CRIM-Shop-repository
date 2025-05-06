@@ -5,8 +5,6 @@ import es.prorix.crimshop.database.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -20,7 +18,7 @@ import java.sql.ResultSet;
 /**
  * Clase controladora de la pantalla de recuperacion de contrasenia
  * @author prorix
- * @version 1.0.2
+ * @veresultSetion 1.0.2
  */
 public class RecuperarContraseniaController {
 
@@ -52,17 +50,17 @@ public class RecuperarContraseniaController {
             }
 
             String sql = "SELECT * FROM Usuarios WHERE email = ?";
-            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.setString(1, email);
-                ResultSet rs = stmt.executeQuery();
+            try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+                preparedStatement.setString(1, email);
+                ResultSet resultSet = preparedStatement.executeQuery();
 
-                if (rs.next()) {
+                if (resultSet.next()) {
                     mostrarAlerta("Éxito", "Se ha enviado un correo electrónico para restablecer tu contraseña.", Alert.AlertType.INFORMATION);
 
                     Stage stage = (Stage) siguienteButton.getScene().getWindow();
                     FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 330, 500);
-                    stage.setTitle("registro");
+                    Scene scene = new Scene(fxmlLoader.load());
+                    stage.setTitle("login");
                     stage.setScene(scene);
                     stage.show();
                 } else {
@@ -87,8 +85,8 @@ public class RecuperarContraseniaController {
             try {
             Stage stage = (Stage) cancelarButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 330, 500);
-            stage.setTitle("registro");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("login");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

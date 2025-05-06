@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.prorix.crimshop.backend.controller.ConfirmarCompraController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <!-- Título de la pantalla -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="💳 Confirmar Compra" />
+
+    <!-- Formulario de la compra -->
+        <Label text="Número de tarjeta:" />
+        <TextField fx:id="tarjetaTextField" promptText="1234 5678 9101 1121" />
+
+        <Label text="CVV:" />
+        <TextField fx:id="cvvTextField" promptText="123" />
+
+        <Label text="Domicilio:" />
+        <TextField fx:id="domicilioTextField" promptText="Calle, Número, Piso" />
+
+        <Label text="Código Postal:" />
+        <TextField fx:id="codigoPostalTextField" promptText="12345" />
+
+        <Label text="Ciudad:" />
+        <ChoiceBox fx:id="ciudadChoiceBox" />
+
+        <Label text="Número de teléfono:" />
+        <TextField fx:id="telefonoTextField" promptText="612 345 678" />
+   <Label fx:id="mensajeLabel" />
+
+
+    <!-- Botones de acción -->
+    <HBox alignment="CENTER" spacing="20">
+        <Button fx:id="confirmarButton" onAction="#confirmarButtonClick" text="Confirmar Compra" />
+        <Button fx:id="volverButton" onAction="#volverButtonClick" text="Volver" />
+    </HBox>
+</VBox>

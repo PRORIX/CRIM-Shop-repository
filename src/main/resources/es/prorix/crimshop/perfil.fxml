@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="es.prorix.crimshop.controladores.PerfilController" stylesheets="@/css/estilos.css">
+<BorderPane stylesheets="@css/estilos.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.2" fx:controller="es.prorix.crimshop.backend.controller.PerfilController">
 
     <center>
-        <VBox alignment="TOP_CENTER" spacing="30" styleClass="found">
+        <VBox alignment="TOP_CENTER" prefHeight="282.0" prefWidth="468.0" spacing="30" styleClass="found">
 
             <!-- Título -->
-            <Label text="👤 Perfil de Usuario" styleClass="title" />
+            <Label styleClass="title" text="👤 Perfil de Usuario" />
 
             <!-- Imagen y datos -->
             <HBox alignment="CENTER" spacing="50">
@@ -29,25 +29,19 @@
                 <!-- Datos del usuario -->
                 <VBox spacing="15">
                     <HBox spacing="10">
-                        <Label text="Nombre de usuario:" styleClass="label-titulo" />
+                        <Label styleClass="label-titulo" text="Nombre de usuario:" />
                         <Label fx:id="labelNombreUsuario" text="Usuario123" />
                     </HBox>
                     <HBox spacing="10">
-                        <Label text="Correo electrónico:" styleClass="label-titulo" />
+                        <Label styleClass="label-titulo" text="Correo electrónico:" />
                         <Label fx:id="labelEmailUsuario" text="correo@ejemplo.com" />
                     </HBox>
                 </VBox>
             </HBox>
-
-            <Separator />
+         <Button fx:id="regresarButton" mnemonicParsing="false" onAction="#regresarButtonClick" text="Regresar" />
 
             <!-- Compras realizadas -->
-            <VBox alignment="TOP_LEFT" prefWidth="400" spacing="10">
-                <Label text="🛍 Compras realizadas" styleClass="label-titulo" />
-                <Label text="· Sudadera Oficial CRIM - 24,99€" />
-                <Label text="· Camiseta ro-BOT ardiendo - 19,99€" />
-                <!-- Más compras... -->
-            </VBox>
+            <VBox alignment="TOP_LEFT" prefWidth="400" spacing="10" />
         </VBox>
     </center>
 </BorderPane>

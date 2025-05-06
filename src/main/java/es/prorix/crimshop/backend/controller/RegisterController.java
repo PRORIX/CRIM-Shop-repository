@@ -20,6 +20,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * Clase controladora de la pantalla de registro de usuarios
+ * @author prorix
+ * @version 1.0.0
+ */
 public class RegisterController implements Initializable {
 
     @FXML
@@ -38,10 +43,16 @@ public class RegisterController implements Initializable {
     public Text textMensaje;
 
 
+    /**
+     * Metodo inicializador
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
+    /**
+     * Metodo del boton de registro
+     */
     @FXML
     public void registerButtonClick(){
         String nombre = usernameField.getText();
@@ -50,44 +61,41 @@ public class RegisterController implements Initializable {
         String confirmPassword = confirmPasswordField.getText();
 
         if (nombre.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            // Mostrar mensaje de error
             textMensaje.setText("Por favor, completa todos los campos.");
             return;
         }
 
         if (!email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
-            textMensaje.setText("📧 El correo electrónico no tiene un formato válido.");
+            textMensaje.setText("El correo electrónico no tiene un formato válido.");
             return;
         }
         if (!password.equals(confirmPassword)) {
-            // Mostrar mensaje de error
             textMensaje.setText("Las contraseñas no coinciden.");
             return;
         }
 
         try (Connection conn = ConexionBD.getConexion()) {
             String consulta = "SELECT * FROM Usuarios WHERE email = ?";
-            PreparedStatement check = conn.prepareStatement(consulta);
-            check.setString(1, email);
-            ResultSet rs = check.executeQuery();
+            PreparedStatement preparedStatement = conn.prepareStatement(consulta);
+            preparedStatement.setString(1, email);
+            ResultSet rs = preparedStatement.executeQuery();
 
 
             if (rs.next()) {
-                textMensaje.setText("❌ Ya existe un usuario con ese correo.");
+                textMensaje.setText("Ya existe un usuario con ese correo.");
             } else {
-                // Insertar nuevo usuario
                 String insertar = "INSERT INTO usuarios(nombreUsuario, email, contrasenia) VALUES (?, ?, ?)";
-                PreparedStatement insertStmt = conn.prepareStatement(insertar);
-                insertStmt.setString(1, nombre);
-                insertStmt.setString(2, email);
-                insertStmt.setString(3, password);
+                PreparedStatement preparedStatementInsertar = conn.prepareStatement(insertar);
+                preparedStatementInsertar.setString(1, nombre);
+                preparedStatementInsertar.setString(2, email);
+                preparedStatementInsertar.setString(3, password);
                 
-                int filas = insertStmt.executeUpdate();
+                int filas = preparedStatementInsertar.executeUpdate();
                 if (filas > 0) {
-                    textMensaje.setText("✅ Usuario registrado correctamente.");
+                    textMensaje.setText("Usuario registrado correctamente.");
                     limpiarCampos();
                 } else {
-                    textMensaje.setText("❌ Error al registrar el usuario.");
+                    textMensaje.setText("Error al registrar el usuario.");
                 }
             }
         } catch (Exception e) {
@@ -101,6 +109,9 @@ public class RegisterController implements Initializable {
 
     }
 
+    /**
+     * Metodo que limpia los campos
+     */
     private void limpiarCampos() {
         usernameField.clear();
         emailField.clear();
@@ -108,13 +119,16 @@ public class RegisterController implements Initializable {
         confirmPasswordField.clear();
     }
 
+    /**
+     * Metodo para volver a la pantalla de login
+     */
     @FXML
     public void loginLinkClick(){
             try {
             Stage stage = (Stage) loginLink.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 330, 500);
-            stage.setTitle("registro");
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Login");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
