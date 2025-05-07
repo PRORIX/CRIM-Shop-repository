@@ -7,7 +7,6 @@ CREATE TABLE usuarios (
     email TEXT UNIQUE NOT NULL
 );
 
--- Tabla de productos
 CREATE TABLE IF NOT EXISTS productos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
@@ -26,7 +25,6 @@ INSERT INTO productos (nombre, descripcion, nombreCodigo, precio) VALUES
 
 
 
--- Tabla del carrito
 CREATE TABLE IF NOT EXISTS carrito (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     id_usuario INTEGER,
@@ -36,7 +34,6 @@ CREATE TABLE IF NOT EXISTS carrito (
     FOREIGN KEY(id_producto) REFERENCES productos(id)
 );
 
--- Tabla de pedidos
 CREATE TABLE IF NOT EXISTS pedidos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     id_usuario INTEGER,

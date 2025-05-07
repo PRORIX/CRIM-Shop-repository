@@ -62,7 +62,7 @@ public class ConfirmarCompraController {
     @FXML
     public void initialize() {
         ciudadChoiceBox.setItems(FXCollections.observableArrayList(
-                "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza"));
+                "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza", "Santa Cruz de Tenerife", "Las Palmas de Gran Canaria"));
 
         tarjetaTextField.setPrefWidth(300);
         cvvTextField.setPrefWidth(100);
@@ -138,7 +138,7 @@ public class ConfirmarCompraController {
         }
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle("Compra realizaca con éxito.");
+        alerta.setTitle("Compra realizada con éxito.");
         alerta.setHeaderText(null);
         alerta.setContentText(
                 "Muchas gracias por su compra, se ha realizado con éxito, pronto recibirá un correo electrónico con información a su email asociado a su cuenta.");

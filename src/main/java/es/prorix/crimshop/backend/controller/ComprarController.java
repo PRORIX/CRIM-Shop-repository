@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 /**
  * Clase controladora de la pantalla de comprar
  * @author prorix
- * @veresultSetion 1.0.0
+ * @version 1.0.0
  */
 public class ComprarController {
 

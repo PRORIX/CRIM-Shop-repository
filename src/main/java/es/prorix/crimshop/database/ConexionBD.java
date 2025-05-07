@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Clase controladora de la conexion con la base de datos
+ * @author prorix
+ * @version 1.0.0
+ */
 public class ConexionBD {
     private static final String URL = "jdbc:sqlite:src/main/resources/baseDatos.db";
 
