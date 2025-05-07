@@ -10,7 +10,7 @@ public class ConfigManager {
 
     public static void cargarProperties() {
         String[] files = {
-            "productos.properties" // Asegúrate de que la ruta sea correcta
+            "productos.properties"
         };
         properties.clear();
 
@@ -18,7 +18,7 @@ public class ConfigManager {
             try (InputStream input = ConfigManager.class.getClassLoader().getResourceAsStream(filename)) {
                 if (input == null) {
                     System.err.println("Archivo de propiedades no encontrado: " + filename);
-                    continue;  // Si no se encuentra el archivo, lo ignoramos y seguimos con el siguiente
+                    continue;
                 }
 
                 try (InputStreamReader isr = new InputStreamReader(input, "UTF-8")) {
@@ -35,6 +35,5 @@ public class ConfigManager {
     }
 
     public static void initialize() {
-        // Inicializa cualquier cosa si es necesario
     }
 }

@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 
 /**
  * Clase controladora de confirmar la compra del usuario
+ * 
  * @author prorix
  * @version 1.0.0
  */
@@ -55,15 +56,13 @@ public class ConfirmarCompraController {
     @FXML
     private Button volverButton;
 
-
     /**
      * Metodo de inicializacion
      */
     @FXML
     public void initialize() {
         ciudadChoiceBox.setItems(FXCollections.observableArrayList(
-            "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza"
-        ));
+                "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza"));
 
         tarjetaTextField.setPrefWidth(300);
         cvvTextField.setPrefWidth(100);
@@ -74,6 +73,7 @@ public class ConfirmarCompraController {
 
     /**
      * Metodo del boton de confirmar la compra
+     * 
      * @param event evento
      * @throws IOException
      */
@@ -88,11 +88,12 @@ public class ConfirmarCompraController {
 
     /**
      * Metodo del boton de regresar una pantalla atras
+     * 
      * @param event evento
      * @throws IOException
      */
     @FXML
-    private void volverButtonClick(ActionEvent event) throws IOException{
+    private void volverButtonClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/prorix/crimshop/comprar.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -102,20 +103,17 @@ public class ConfirmarCompraController {
 
     /**
      * Metodo que valida que los campos esten rellenos
+     * 
      * @return true / false
      */
     private boolean validarCampos() {
         // Validar los campos
-        return !tarjetaTextField.getText().isEmpty() &&
-               !cvvTextField.getText().isEmpty() &&
-               !domicilioTextField.getText().isEmpty() &&
-               !codigoPostalTextField.getText().isEmpty() &&
-               !ciudadChoiceBox.getSelectionModel().isEmpty() &&
-               !telefonoTextField.getText().isEmpty();
+        return !tarjetaTextField.getText().isEmpty() && !cvvTextField.getText().isEmpty() && !domicilioTextField.getText().isEmpty() && !codigoPostalTextField.getText().isEmpty() && !ciudadChoiceBox.getSelectionModel().isEmpty() && !telefonoTextField.getText().isEmpty();
     }
 
     /**
      * Metodo de realizar la compra tras revisar los campos
+     * 
      * @param event evento
      * @throws IOException
      */
@@ -129,22 +127,21 @@ public class ConfirmarCompraController {
             ResultSet rsUsuario = pStmtUsuario.executeQuery();
             int idUsuario = rsUsuario.getInt("id");
 
-
-
             String querry = "DELETE FROM carrito WHERE id_usuario = ?";
             PreparedStatement pStatement = conn.prepareStatement(querry);
             pStatement.setInt(1, idUsuario);
             pStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             ConexionBD.cerrarConexion();
         }
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Compra realizaca con éxito.");
         alerta.setHeaderText(null);
-        alerta.setContentText("Muchas gracias por su compra, se ha realizado con éxito, pronto recibirá un correo electrónico con información a su email asociado a su cuenta.");
+        alerta.setContentText(
+                "Muchas gracias por su compra, se ha realizado con éxito, pronto recibirá un correo electrónico con información a su email asociado a su cuenta.");
         alerta.showAndWait();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/prorix/crimshop/productos.fxml"));
