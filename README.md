@@ -98,7 +98,7 @@ Pasarela de pago integrada para facilitar las compras de los usuarios con total 
 
 ## Roadmap – Próximas mejoras
 
-- [✅] Notificaciones por email para pedidos
+- [ ] Notificaciones por email para pedidos
 - [ ] Sistema de valoraciones y reseñas
 - [ ] Dark mode
 
