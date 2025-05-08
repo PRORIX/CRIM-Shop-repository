@@ -1,6 +1,6 @@
 # CRIM Shop – Tu estilo, nuestra pasión
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Build Status](https://img.shields.io/badge/build-finished-yellow)
 ![Versión](https://img.shields.io/badge/version-1.0-blue)
 ![Licencia](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -89,28 +89,21 @@ Pasarela de pago integrada para facilitar las compras de los usuarios con total 
 | Funcionalidad                  | Estado |
 |-------------------------------|--------|
 | Registro/Login                | ✅     |
-| Visualización de productos    | ❌     |
-| Carrito de compras            | ❌     |
-| Gestión de pedidos            | ❌     |
-| Gestión de inventario (Admin) | ❌     |
-| Reembolsos                    | ❌     |
-| Pasarela de pago              | ❌     |
+| Visualización de productos    | ✅     |
+| Carrito de compras            | ✅     |
+| Gestión de pedidos            | ✅     |
+| Pasarela de pago              | ✅     |
 
 ---
 
 ## Roadmap – Próximas mejoras
 
-- [ ] Notificaciones por email para pedidos
+- [✅] Notificaciones por email para pedidos
 - [ ] Sistema de valoraciones y reseñas
 - [ ] Dark mode
 
 ---
 
-## Demo
-
-[Ver demo ]()  
-
----
 
 ## Contribuciones
 
